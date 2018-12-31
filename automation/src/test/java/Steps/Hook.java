@@ -7,12 +7,19 @@ import cucumber.api.java.Before;
 /**
  * Created by Mufleh on 31/12/2018.
  */
-public class Hook {
+public class Hook extends BaseUtil {
+
+    private BaseUtil baseUtil;
+
+    public Hook(BaseUtil baseUtil) {
+        this.baseUtil = baseUtil;
+    }
 
     @Before
     public void initialize(){
 
         System.out.println("Starting tests");
+        baseUtil.StepInfo = "FirefoxDriver";
     }
 
     @After

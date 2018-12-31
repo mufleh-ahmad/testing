@@ -13,12 +13,20 @@ import java.util.List;
 /**
  * Created by Mufleh on 31/12/2018.
  */
-public class search {
+public class search extends BaseUtil {
+
+    private BaseUtil baseUtil;
+
+    public search(BaseUtil baseUtil) {
+        this.baseUtil = baseUtil;
+    }
+
     @Given("^user enters google in url$")
     public void userEntersGoogleInUrl() throws Throwable {
 
         System.out.println("Entering google");
 
+        System.out.println("Driver is " + baseUtil.StepInfo);
     }
 
     @When("^user searches automation$")
