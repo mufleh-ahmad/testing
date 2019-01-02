@@ -7,6 +7,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.By;
 
 import java.util.List;
 
@@ -26,12 +27,16 @@ public class search extends BaseUtil {
 
         System.out.println("Entering google");
 
-        System.out.println("Driver is " + baseUtil.StepInfo);
+        baseUtil.driver.navigate().to("http://www.google.co.uk");
+
+        baseUtil.driver.findElement(By.xpath(".//a[contains(text(),'About')]")).click();
     }
 
     @When("^user searches automation$")
     public void userSearchesAutomation() throws Throwable {
         System.out.println("Searching");
+        //baseUtil.driver.findElement(By.id("")).sendKeys("Automation");
+
     }
 
     @Then("^user is directed to results page$")
