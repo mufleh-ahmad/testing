@@ -1,5 +1,6 @@
 package Steps;
 
+import Pages.LoginPage;
 import Util.User;
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;
@@ -22,6 +23,8 @@ public class search extends BaseUtil {
         this.baseUtil = baseUtil;
     }
 
+
+
     @Given("^user enters google in url$")
     public void userEntersGoogleInUrl() throws Throwable {
 
@@ -29,7 +32,9 @@ public class search extends BaseUtil {
 
         baseUtil.driver.navigate().to("http://www.google.co.uk");
 
-        baseUtil.driver.findElement(By.xpath(".//a[contains(text(),'About')]")).click();
+        LoginPage loginPage = new LoginPage(baseUtil.driver);
+
+        loginPage.clickAboutLink();
     }
 
     @When("^user searches automation$")
