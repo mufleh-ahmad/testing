@@ -23,25 +23,22 @@ public class search extends BaseUtil {
         this.baseUtil = baseUtil;
     }
 
-
-
     @Given("^user enters google in url$")
     public void userEntersGoogleInUrl() throws Throwable {
 
         System.out.println("Entering google");
 
-        baseUtil.driver.navigate().to("http://www.google.co.uk");
-
         LoginPage loginPage = new LoginPage(baseUtil.driver);
 
-        loginPage.clickAboutLink();
+        baseUtil.driver.navigate().to("http://www.google.co.uk");
+
+        loginPage.enterSearchItem("test");
     }
 
     @When("^user searches automation$")
     public void userSearchesAutomation() throws Throwable {
-        System.out.println("Searching");
-        //baseUtil.driver.findElement(By.id("")).sendKeys("Automation");
-
+        LoginPage loginPage = new LoginPage(baseUtil.driver);
+        loginPage.clickButton();
     }
 
     @Then("^user is directed to results page$")

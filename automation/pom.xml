@@ -40,9 +40,6 @@
                             <cucumberOutput>${project.build.directory/cucumber.json}</cucumberOutput>
                         </configuration>
                     </execution>
-
-
-
                 </executions>
             </plugin>
         </plugins>
@@ -75,6 +72,11 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.10.1</version>
         </dependency>
     </dependencies>
 
