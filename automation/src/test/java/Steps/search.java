@@ -2,20 +2,16 @@ package Steps;
 
 import Pages.LoginPage;
 import Util.User;
-import cucumber.api.DataTable;
-import cucumber.api.PendingException;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.openqa.selenium.By;
 
 import java.util.List;
 
 /**
  * Created by Mufleh on 31/12/2018.
  */
-public class search extends BaseUtil {
+public class search extends BaseClass {
 
     @Given("^user enters google in url$")
     public void userEntersGoogleInUrl() throws Throwable {

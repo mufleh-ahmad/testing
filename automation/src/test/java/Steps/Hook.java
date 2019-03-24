@@ -3,29 +3,25 @@ package Steps;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Properties;
 
 /**
  * Created by Mufleh on 31/12/2018.
  */
-public class Hook extends BaseUtil  {
+public class Hook extends BaseClass {
 
-    private BaseUtil baseUtil;
+    private BaseClass baseClass;
 
     DesiredCapabilities capabilities;
-    public Hook(BaseUtil baseUtil) {
-        this.baseUtil = baseUtil;
+    public Hook(BaseClass baseClass) {
+        this.baseClass = baseClass;
     }
 
     public String getProperties(String propertyName) {
@@ -55,7 +51,7 @@ public class Hook extends BaseUtil  {
         String seleniumHubUrl = getProperties("selenium-hub-url");
 
         System.out.println("Starting tests");
-        baseUtil.StepInfo = "FirefoxDriver";
+        baseClass.StepInfo = "FirefoxDriver";
         init();
 
 

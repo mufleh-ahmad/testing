@@ -7,7 +7,7 @@ import java.net.MalformedURLException;
 /**
  * Created by Mufleh on 31/12/2018.
  */
-public abstract class BaseUtil {
+public abstract class BaseClass {
 
     public String StepInfo;
 
