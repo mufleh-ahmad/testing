@@ -67,10 +67,4 @@ public class DriverInit {
         // get the property value and print it out
         return properties.getProperty(propertyName);
     }
-
-    public WebDriver getDriver()
-    {
-        return driver;
-    }
-
 }
