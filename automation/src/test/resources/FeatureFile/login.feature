@@ -7,6 +7,11 @@ Feature: GOOGLE SEARCH
     When user searches automation
     Then user is directed to results page
 
+  Scenario: Test2
+    Given user enters google in url
+    When user searches automation
+    Then user is directed to results page
+
 #  Scenario: Test2
 #    Given user is logged in
 #    When user enters the following details

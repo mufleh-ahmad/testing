@@ -17,27 +17,21 @@ import java.util.List;
  */
 public class search extends BaseUtil {
 
-    private BaseUtil baseUtil;
-
-    public search(BaseUtil baseUtil) {
-        this.baseUtil = baseUtil;
-    }
-
     @Given("^user enters google in url$")
     public void userEntersGoogleInUrl() throws Throwable {
 
         System.out.println("Entering google");
 
-        LoginPage loginPage = new LoginPage(baseUtil.driver);
+        LoginPage loginPage = new LoginPage(driver);
 
-        baseUtil.driver.navigate().to("http://www.google.co.uk");
+        driver.navigate().to("http://www.google.co.uk");
 
         loginPage.enterSearchItem("test");
     }
 
     @When("^user searches automation$")
     public void userSearchesAutomation() throws Throwable {
-        LoginPage loginPage = new LoginPage(baseUtil.driver);
+        LoginPage loginPage = new LoginPage(driver);
         loginPage.clickButton();
     }
 

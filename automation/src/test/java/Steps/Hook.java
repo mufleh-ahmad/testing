@@ -3,6 +3,7 @@ package Steps;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -18,7 +19,7 @@ import java.util.Properties;
 /**
  * Created by Mufleh on 31/12/2018.
  */
-public class Hook extends BaseUtil {
+public class Hook extends BaseUtil  {
 
     private BaseUtil baseUtil;
 
@@ -55,17 +56,9 @@ public class Hook extends BaseUtil {
 
         System.out.println("Starting tests");
         baseUtil.StepInfo = "FirefoxDriver";
+        init();
 
-        if (browserProperty.equals("Chrome")) {
-            System.setProperty("webdriver.chrome.driver","C:\\Selenium\\chromedriver.exe");
-            baseUtil.driver = new ChromeDriver();
-        } else if (browserProperty.equals("ChromeGrid")) {
-            capabilities = DesiredCapabilities.chrome();
-            baseUtil.driver = new RemoteWebDriver(new URL(seleniumHubUrl), capabilities);
-        } else if (browserProperty.equals("FirefoxGrid")){
-            capabilities = DesiredCapabilities.firefox();
-            baseUtil.driver = new RemoteWebDriver(new URL(seleniumHubUrl), capabilities);
-        }
+
     }
 
     @After
@@ -74,7 +67,7 @@ public class Hook extends BaseUtil {
             System.out.println("test failed");
         }
 
-        baseUtil.driver.quit();
+        driver.quit();
         System.out.println("Test ended");
     }
 

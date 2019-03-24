@@ -15,6 +15,7 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage extends SeleniumActions {
 
     public LoginPage(WebDriver driver) {
+        super(driver);
         PageFactory.initElements(driver,this);
     }
 
@@ -35,6 +36,7 @@ public class LoginPage extends SeleniumActions {
 
     public void enterSearchItem(String searchString){
         searchBox.isDisplayed();
+        System.out.println(driver.getCurrentUrl());
         searchBox.sendKeys("Testing");
         searchBox.sendKeys(Keys.TAB);
     }

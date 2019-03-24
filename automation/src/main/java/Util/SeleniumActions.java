@@ -19,6 +19,10 @@ public class SeleniumActions {
     protected WebDriver driver;
     protected WebDriverWait wait;
 
+    public SeleniumActions(WebDriver driver) {
+        this.driver = driver;
+    }
+
     public void waitForElementPresent(WebElement element){
         Wait<WebDriver> wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOfElementLocated((By) element));
