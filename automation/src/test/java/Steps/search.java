@@ -57,8 +57,6 @@ public class search extends BaseClass {
         System.out.println(firstName);
         System.out.println(surname);
         System.out.println(age);
-
-        //
     }
 
 }
