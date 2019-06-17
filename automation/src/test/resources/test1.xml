@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Person>
+    <Header>
+        <Name>Syed</Name>
+        <Surname>Bebeto</Surname>
+        <DateOfBirth>01/01/1981</DateOfBirth>
+        <NationalInsurance>JK2888282</NationalInsurance>
+    </Header>
+    <Vehicle>
+        <Make>BMW</Make>
+        <Model>X5</Model>
+        <Registration>JK89UOO</Registration>
+    </Vehicle>
+    <Vehicle>
+        <Make>Mercedes</Make>
+        <Model>C Class</Model>
+        <Registration>UJ88UII</Registration>
+    </Vehicle>
+</Person>
